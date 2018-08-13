@@ -1,6 +1,7 @@
-from flask import Flask, url_for, request, render_template
+from flask import Flask, url_for, request, render_template, flash
 
 app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/')
 def index():
@@ -9,6 +10,7 @@ def index():
 @app.route('/hello/')
 @app.route('/hello/<name>')
 def hello(name=None):
+    flash('You were successfully logged in')
     return render_template('hello.html', name=name)
 
 @app.route('/user/<username>')
