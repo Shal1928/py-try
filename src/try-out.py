@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, url_for
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,9 +11,9 @@ def hello():
     return 'Hello, World'
 
 @app.route('/user/<username>')
-def show_user_profile(username):
+def profile(username):
     # show the user profile for that user
-    return 'User-value %s' % username
+    return '{} User-value %s'.format(username) % username
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
@@ -20,7 +21,7 @@ def show_post(post_id):
     return 'Post-value %d' % post_id
 
 @app.route('/path/<path:subpath>')
-def show_subpath(subpath):
+def path(subpath):
     # show the subpath after /path/
     return 'Subpath-value %s' % subpath
 
@@ -31,3 +32,9 @@ def projects():
 @app.route('/about')
 def about():
     return 'The about page'
+
+# with app.test_request_context():
+#     print(url_for('index'))
+#     print(url_for('path'))
+#     print(url_for('path', next='/'))
+#     print(url_for('profile', username='John Doe'))
