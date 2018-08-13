@@ -5,7 +5,17 @@
     <title>Flask Hello World</title>
 </head>
 <body>
-    {% if name %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<p>
+{% if name %}
   <h1>Hello {{ name }}!</h1>
 {% else %}
   <h3>Hello, World!</h3>
