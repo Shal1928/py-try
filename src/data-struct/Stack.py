@@ -6,9 +6,7 @@ class StackTry:
         self.list.append(new_element)
 
     def pop(self):
-        if not self.list:
-            return
-        else:
+        if self.list:
             self.list.pop()
 
     def __repr__(self):
