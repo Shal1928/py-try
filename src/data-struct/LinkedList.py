@@ -6,10 +6,11 @@ class Node:
     def __str__(self):
         return "{0}:n{1}".format(str(self.data), str(self.next))
 
+
 class LinkedList:
     def __init__(self):
         self.list = []
-        self.index = 0;
+        self.index = 0
 
     # def add(self, value, index):
     #     self.list.append(Node(value, index))
@@ -18,8 +19,10 @@ class LinkedList:
         self.index += 1
         self.add(value, self.index)
 
-    def remove(self):
-        self.list.pop()
+    def remove(self, index):
+        if index <= self.index:
+            print("value: {0} is deleted".format(self.list[index]))
+            self.list.pop(index)
 
     def __repr__(self):
         return ', '.join(str(i) for i in self.list)
