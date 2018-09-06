@@ -17,7 +17,9 @@ class LinkedList:
         self.list.append(Node(value, self.index))
 
     def insert(self, value, index):
-
+        for i in range(index, self.index + 1):
+            self.list[i].next += 1
+        self.list.append(Node(value, index))
 
     def remove(self, index):
         if index <= self.index:
