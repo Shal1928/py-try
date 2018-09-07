@@ -1,3 +1,6 @@
+from operator import attrgetter
+
+
 class Node:
     def __init__(self, data=None, next=None):
         self.data = data
@@ -17,21 +20,26 @@ class LinkedList:
         self.list.append(Node(value, self.index))
 
     def insert(self, value, index):
-        for i in range(index, self.index + 1):
+        for i in range(index, self.index):
             self.list[i].next += 1
-        self.list.append(Node(value, index))
+        self.list.append(Node(value, index + 1))
+        self.list = sorted(self.list, key=attrgetter('next'))
 
     def remove(self, index):
         if index <= self.index:
             print("value: {0} is deleted".format(self.list[index]))
             self.list.pop(index)
-        else: raise IndexError("Index {0} is out of range!".format(index))
+        else:
+            raise IndexError("Index {0} is out of range!".format(index))
 
     def __repr__(self):
         return ", ".join(str(i) for i in self.list)
+
 
 linkedList = LinkedList()
 print("1 stack = {0}".format(linkedList))
 linkedList.add(1)
 linkedList.add(2)
 print("2 stack = {0}".format(linkedList))
+linkedList.insert(1.5, 1)
+print("3 stack = {0}".format(linkedList))
