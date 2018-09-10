@@ -12,19 +12,25 @@ class Node:
 
 class LinkedList:
     def __init__(self):
-        self.list = []
+        self.list = {}
         self.index = 0
 
     def add(self, value):
         self.index += 1
-        self.list.append(Node(value, self.index))
+        self.list[self.index]=value
 
     def insert(self, value, index):
         # for i in range(index, self.index):
         #     self.list[i].next += 1
         # self.list.append(Node(value, index + 1))
         # self.list = sorted(self.list, key=attrgetter('next'))
-        self.list = [node.next+=1 for node in self.list]
+        self.index += 1
+        self.list[self.index]=None
+        for k, v in self.list.items():
+            if k==index:
+                self.list[k]=value
+            else:
+                self.list[k+1]=v
 
     def remove(self, index):
         if index <= self.index:
