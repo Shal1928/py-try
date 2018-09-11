@@ -12,12 +12,12 @@ class Node:
 
 class LinkedList:
     def __init__(self):
-        self.list = {}
+        self.list = []
         self.index = 0
 
     def add(self, value):
         self.index += 1
-        self.list[self.index]=value
+        self.list.append(Node(value, self.index))
 
     def insert(self, value, index):
         # for i in range(index, self.index):
@@ -25,12 +25,14 @@ class LinkedList:
         # self.list.append(Node(value, index + 1))
         # self.list = sorted(self.list, key=attrgetter('next'))
         self.index += 1
-        self.list[self.index]=None
-        for k, v in self.list.items():
-            if k==index:
-                self.list[k]=value
-            else:
-                self.list[k+1]=v
+        self.list.append(Node())
+        for i in self.list[::-1]:
+            print(i)
+            print(self.list[i])
+            # if i==index:
+            #     self.list[i]=Node(value, self.index)
+            # else:
+            #     self.list[i]=v
 
     def remove(self, index):
         if index <= self.index:
