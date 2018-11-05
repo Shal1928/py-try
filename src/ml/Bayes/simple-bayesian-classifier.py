@@ -27,6 +27,7 @@ for label in np.unique(y):
     print("y = {}".format(y))
     print("label={}".format(label))
     print("y == label -> {}".format(y == label))
-    print(X[y == label].sum(axis=0))
+    print("X = {}".format(X[y == label]))
+    print("sum = {}".format(X[y == label].sum(axis=0)))
     counts[label] = X[y == label].sum(axis=0)
 print("Частоты признаков:\n{}".format(counts))
