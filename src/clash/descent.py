@@ -23,3 +23,12 @@ while True:
 # best solution:
 # while True:
 #     print(max([(int(input()),x) for x in range(8)])[1])
+
+# while True:
+#     m = [int(input()) for i in range(8)]  # represents the height of one mountain.
+#
+#     # Write an action using print
+#     # To debug: print("Debug messages...", file=sys.stderr)
+#
+#     # The index of the mountain to fire on.
+#     print(m.index(max(m)))
