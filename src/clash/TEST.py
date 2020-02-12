@@ -1,2 +1,2 @@
-x = lambda a : a + 10
-print(x(5))
+s = "Hello World"
+print(s[0:3])
