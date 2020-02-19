@@ -1,2 +1,4 @@
-s = "Hello World"
-print(s[0:3])
+n = 200
+i = 50
+m = 2
+
