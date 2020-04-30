@@ -1,0 +1,1 @@
+"C:\root\dev\PyEenv37\py-try\Scripts\python.exe" "C:\root\dev\py-try\src\rchat\TEST.py"
