@@ -106,4 +106,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-/try-out/DCIM/100MEDIA
+/try-out/DCIM/100MEDIA/*
